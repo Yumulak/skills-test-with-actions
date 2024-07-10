@@ -27,11 +27,6 @@ jobs:
 
       - name: Run markdown lint
         run: |
-          npm install remark-cli remark-lint remark-lint-emphasis-marker
-          echo '{
-            "plugins": [
-              ["remark-lint-emphasis-marker", "*"]
-            ]
-          }' > .remarkrc
-          npx remark . --frail
+          npm install remark-cli remark-preset-lint-consistent
+          npx remark . --use remark-preset-lint-consistent --frail
       
